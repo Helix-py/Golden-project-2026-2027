@@ -1,0 +1,243 @@
+:root {
+    --page-background: #eef7ff;
+    --surface: #ffffff;
+    --light-blue: #dff1ff;
+    --lighter-blue: #f5fbff;
+    --border-black: #000000;
+    --primary-blue: #5aa9e6;
+    --text-black: #000000;
+    --muted-text: #333333;
+}
+
+/* General page styling */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 32px 48px;
+    background-color: var(--page-background);
+    color: var(--text-black);
+    font-family: Arial, sans-serif;
+}
+
+/* Top section */
+
+.top-bar {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    width: 100%;
+    padding: 18px;
+    border: 1px solid var(--border-black);
+    border-radius: 18px;
+    background-color: var(--surface);
+    box-shadow: 0 8px 24px rgba(56, 125, 170, 0.08);
+}
+
+/* Settings link */
+
+.settings-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 46px;
+    border: 1px solid var(--border-black);
+    border-radius: 12px;
+    background-color: var(--light-blue);
+    color: var(--text-black);
+    font-size: 24px;
+    text-decoration: none;
+    transition: 0.2s ease;
+}
+
+.settings-link:hover {
+    background-color: var(--lighter-blue);
+    color: var(--text-black);
+}
+
+/* Search form */
+
+.search-form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+}
+
+.search-form label {
+    color: var(--text-black);
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.search-form input {
+    flex: 1;
+    min-width: 0;
+    padding: 13px 16px;
+    border: 1px solid var(--border-black);
+    border-radius: 10px;
+    outline: none;
+    background-color: var(--lighter-blue);
+    color: var(--text-black);
+    font-size: 15px;
+}
+
+.search-form input::placeholder {
+    color: var(--muted-text);
+}
+
+.search-form input:focus {
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 3px var(--light-blue);
+}
+
+.search-form button {
+    padding: 13px 18px;
+    border: 1px solid var(--border-black);
+    border-radius: 10px;
+    background-color: var(--light-blue);
+    color: var(--text-black);
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.2s ease;
+}
+
+.search-form button:hover {
+    background-color: var(--lighter-blue);
+}
+
+/* Username */
+
+.username {
+    margin: 0;
+    padding: 12px 16px;
+    border: 1px solid var(--border-black);
+    border-radius: 10px;
+    background-color: var(--light-blue);
+    color: var(--text-black);
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+/* Navigation bar */
+
+.main-nav {
+    display: flex;
+    gap: 14px;
+    width: 100%;
+    margin-top: 24px;
+}
+
+.nav-button {
+    flex: 1;
+    min-height: 54px;
+    padding: 14px 20px;
+    border: 1px solid var(--border-black);
+    border-radius: 10px;
+    background-color: var(--light-blue);
+    color: var(--text-black);
+    cursor: pointer;
+    font-size: 16px;
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.nav-button:hover {
+    border-color: var(--border-black);
+    background-color: var(--surface);
+    color: var(--text-black);
+}
+
+.nav-button.active {
+    border-color: var(--border-black);
+    background-color: var(--light-blue);
+    color: var(--text-black);
+}
+
+.nav-button.active:hover {
+    background-color: var(--surface);
+    color: var(--text-black);
+}
+
+
+/* Main content area */
+
+main {
+    min-height: 300px;
+    margin-top: 30px;
+    padding: 28px;
+    border: 1px solid var(--border-black);
+    border-radius: 18px;
+    background-color: var(--surface);
+    box-shadow: 0 8px 24px rgba(56, 125, 170, 0.08);
+}
+
+/* Responsive layout */
+
+@media (max-width: 700px) {
+    body {
+        padding: 20px;
+    }
+
+    .top-bar {
+        flex-wrap: wrap;
+        padding: 14px;
+    }
+
+    .search-form {
+        order: 3;
+        flex-basis: 100%;
+    }
+
+    .search-form label {
+        display: none;
+    }
+
+    .username {
+        margin-left: auto;
+    }
+
+    .main-nav {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .nav-button {
+        min-height: 48px;
+        padding: 10px;
+    }
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main button {
+    width: 160px;
+    height: 160px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 0;
+    background-color: var(--surface);
+    border: 2px solid var(--border-black);
+    border-radius: 6px;
+
+    color: var(--text-black);
+    font-family: inherit;
+    font-size: 1rem;
+    text-align: center;
+    cursor: pointer;
+}
+

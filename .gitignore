@@ -1,0 +1,48 @@
+# Python virtual environments
+venv/
+.venv/
+env/
+ENV/
+
+# Python cache and compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+credentials.json
+secrets.json
+config.local.py
+secrets.py
+
+# Databases and database exports
+*.sql
+*.sql.gz
+*.sqlite
+*.sqlite3
+*.db
+*.dump
+*.bak
+*.backup
+
+# User uploads and private data
+uploads/
+user_uploads/
+media/
+private/
+user_data/
+backups/
+
+# Log files
+*.log
+
+# Operating-system files
+.DS_Store
+Thumbs.db

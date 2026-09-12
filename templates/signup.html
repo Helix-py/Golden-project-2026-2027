@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mitty signup</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='signup.css') }}">
+
+</head>
+<body>
+
+    <h1>Hello new user</h1>
+</body>
+
+<div class="signup-box">
+    <h1>sign-up</h1>
+
+    <form>
+
+    <p>username</p>
+    <input
+        type="username"
+        id="username"
+        name="username"
+        placeholder="make your username"
+        >
+
+    <p>password</p>
+    <input
+        type="password"
+        id="password"
+        name="password"
+        placeholder="make your password"
+        >
+
+    <button type="submit">sign-up</button>
+
+    <p>
+        have an account?
+        <a href="{{ url_for('login') }}">login</a>
+    </p>
+
+    <p>
+        don't want to save your data?
+        <a href="{{ url_for('dash') }}"> <br> join as guest</a>
+    </p>
+
+    </form>
+
+</div>
+</html>

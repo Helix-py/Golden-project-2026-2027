@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mittty dash</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}">
+</head>
+<body>
+
+    <div>
+    <header class="top-bar">
+        <!-- Settings -->
+        <a href="/settings" class="settings-link" aria-label="Open settings">
+            ⚙
+        </a>
+
+        <!-- Search -->
+        <form class="search-form" role="search">
+            <label for="app-search">Search apps</label>
+            <input
+                type="search"
+                id="app-search"
+                name="search"
+                placeholder="Search apps..."
+            >
+            <button type="submit">Search</button>
+        </form>
+
+        <!-- User name -->
+        <p class="username">Guest</p>
+    </header>
+    </div>
+
+
+    <nav class="main-nav" aria-label="Main navigation">
+        <button class="nav-button active" data-section="home-section">
+            Home
+        </button>
+
+        <button class="nav-button" data-section="games-section">
+            Games
+        </button>
+
+        <button class="nav-button" data-section="tools-section">
+            Tools
+        </button>
+
+        <button class="nav-button" data-section="coming-soon-section">
+            Coming Soon
+        </button>
+
+        <button class="nav-button" data-section="help-section">
+            Help
+        </button>
+    </nav>
+
+    <main>
+        <!-- Dashboard content -->
+        <div>
+            <button>
+                tic tac toe
+            </button>
+        </div>
+
+    </main>
+
+
+
+
+
+
+</body>
+</html>
