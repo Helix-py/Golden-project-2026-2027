@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Account Settings</title>
+    <title>Mitty -Account Settings</title>
     <link rel="stylesheet" href="{{ url_for('static',filename='settings.css') }}">
+    <link rel="icon" type="image/png" href="/static/pics/favicon.png">
+
 </head>
 <body>
 
@@ -14,20 +16,23 @@
             <h2>Settings</h2>
             <nav>
                 <ul>
-                    <li><a href="#" class="active">Profile</a></li>
-                    <li><a href="#">Account Security</a></li>
-                    <li><a href="#">Notifications</a></li>
+                    <li><a href="#profile" class="active">Profile</a></li>
+                    <li><a href="#account">Account Security</a></li>
+                    <li><a href="#notifications">Notifications</a></li>
                 </ul>
             </nav>
         </aside>
 
         <!-- Main Settings Content -->
         <main class="settings-content">
-            <section class="settings-section">
+
+            <section id="profile" class="settings-section active">
+
                 <h3>Public Profile</h3>
                 <p class="section-desc">Manage how your information appears publicly.</p>
 
                 <form>
+
                     <div class="form-group">
                         <label for="username">Username</label>
                         <input type="text" id="username" value="johndoe123">
@@ -48,10 +53,96 @@
                         <button type="submit" class="button button-primary">Save Changes</button>
                         <button type="button" class="button button-secondary">Cancel</button>
                     </div>
+
                 </form>
+
             </section>
+
+            <section id="account" class="settings-section">
+
+                <h3>Account Securty</h3>
+                <p>See your securty metrics here!</p>
+
+                <br>
+
+                <h4>Password management</h4>
+                <form>
+                    <div class="form-group">
+                        <label>Change your password here</label>
+                        <input type="text" id="password" placeholder="new password here...">
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="button button-primary">Save Changes</button>
+                        <button type="button" class="button button-secondary">Cancel</button>
+                    </div>
+                </form>
+
+                <br>
+
+                <h4>Set your recovery email here</h4>
+                <form>
+                    <div class="form-group">
+                        <label>Recover now!</label>
+                        <input type="text" id="email" placeholder="email here...">
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="button button-primary">Save Changes</button>
+                        <button type="button" class="button button-secondary">Cancel</button>
+                    </div>
+                </form>
+
+
+
+
+            </section>
+
+            <section id="notifications" class="settings-section">
+
+                <h3>Notifications</h3>
+                <p>here to notify you of updates!</p>
+
+                <br>
+
+                <p>Recent Messages</p>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Date sent</th>
+                            <th>Message</th>
+                            <th>From</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>PLACEHOLDER</td>
+                            <td>PLACEHOLDER</td>
+                            <td>PLACEHOLDER</td>
+                        </tr>
+                        <tr>
+                            <td>PLACEHOLDER</td>
+                            <td>PLACEHOLDER</td>
+                            <td>PLACEHOLDER</td>
+                        </tr>
+                        <tr>
+                            <td>PLACEHOLDER</td>
+                            <td>PLACEHOLDER</td>
+                            <td>PLACEHOLDER</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+
+
+
         </main>
     </div>
+
+
+    <script src="{{ url_for('interactive',filename='settings.js') }}"></script>
 
 </body>
 </html>

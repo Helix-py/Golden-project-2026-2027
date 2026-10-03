@@ -1,7 +1,7 @@
 
 # A very simple Flask Hello World app for you to get started with...
 
-from flask import Flask, render_template
+from flask import Flask, render_template, send_from_directory
 
 app = Flask(__name__)
 
@@ -25,3 +25,6 @@ def dash():
 def setting():
     return render_template("settings.html")
 
+@app.route("/interactive/<path:filename>")
+def interactive(filename):
+    return send_from_directory("interactive", filename)

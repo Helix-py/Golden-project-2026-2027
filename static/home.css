@@ -45,3 +45,30 @@ button {
 button:hover {
     background-color: var(--surface);
 }
+
+@media (max-width: 600px) {
+    body {
+        padding: 12px;
+    }
+
+    h1 {
+        font-size: 30px;
+        padding: 4px;
+    }
+
+    .home-box {
+        width: 90%;
+        max-width: 300px;
+        padding: 20px 12px;
+        margin: 60px auto;
+        border-width: 3px;
+    }
+
+    button {
+        display: block;
+        width: 90%;
+        margin: 10px auto;
+        padding: 10px 14px;
+        font-size: 16px;
+    }
+}

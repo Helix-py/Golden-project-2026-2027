@@ -3,72 +3,171 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>mittty dash</title>
+    <title>Mitty Dashboard</title>
+
     <link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}">
+    <link rel="icon" type="image/png" href="/static/pics/favicon.png">
 </head>
 <body>
 
-    <div>
     <header class="top-bar">
-        <!-- Settings -->
         <a href="/settings" class="settings-link" aria-label="Open settings">
             ⚙
         </a>
 
-        <!-- Search -->
         <form class="search-form" role="search">
             <label for="app-search">Search apps</label>
+
             <input
                 type="search"
                 id="app-search"
                 name="search"
                 placeholder="Search apps..."
             >
+
             <button type="submit">Search</button>
         </form>
 
-        <!-- User name -->
-        <p class="username">Guest</p>
+        <p class="username"><a href="/">username</a></p>
     </header>
-    </div>
 
-
+<!--NAVAGATION LINKS-->
     <nav class="main-nav" aria-label="Main navigation">
-        <button class="nav-button active" data-section="home-section">
-            Home
-        </button>
-
-        <button class="nav-button" data-section="games-section">
-            Games
-        </button>
-
-        <button class="nav-button" data-section="tools-section">
-            Tools
-        </button>
-
-        <button class="nav-button" data-section="coming-soon-section">
-            Coming Soon
-        </button>
-
-        <button class="nav-button" data-section="help-section">
-            Help
-        </button>
+        <a href="#home" class="nav-button active">Home</a>
+        <a href="#games" class="nav-button">Games</a>
+        <a href="#tools" class="nav-button">Tools</a>
+        <a href="#coming-soon" class="nav-button">Coming Soon</a>
+        <a href="#help" class="nav-button">Help</a>
     </nav>
 
-    <main>
-        <!-- Dashboard content -->
-        <div>
-            <button>
-                tic tac toe
-            </button>
-        </div>
+
+    <main class="main">
+
+<!-- APPLACTION BUTTONS -->
+    <section class="app-buttons">
+
+        <button class="app-button" data-category="game">
+            <img src="/static/pics/tictactoe.png" alt="Tic Tac Toe">
+        </button>
+
+        <button class="app-button" data-category="game">
+            <img src="/static/pics/chess.png" alt="Chess">
+        </button>
+
+        <button class="app-button" data-category="game">
+            <img src="/static/pics/sudoku.png" alt="Sudoku">
+        </button>
+
+        <button class="app-button" data-category="game">
+            <img src="/static/pics/hangman.png" alt="Hangman">
+        </button>
+
+        <button class="app-button" data-category="tool">
+            <img src="/static/pics/calculator.png" alt="Calculator">
+        </button>
+
+        <button class="app-button" data-category="tool">
+            <img src="/static/pics/goal.png" alt="Goals">
+        </button>
+
+        <button class="app-button" data-category="tool">
+            <img src="/static/pics/calander.png" alt="Calendar">
+        </button>
+
+        <button class="app-button" data-category="tool">
+            <img src="/static/pics/clock.png" alt="Clock">
+        </button>
+
+        <button class="app-button" data-category="tool">
+            <img src="/static/pics/weather.png" alt="Weather">
+        </button>
+
+    </section>
+
+
+<!--COMING-SOON CONTENT PAGE-->
+    <section id="coming-soon-content" class="page-content is-hidden">
+
+        <h1>Coming Soon and information</h1>
+        <p>New applications will be available here soon.</p>
+        <br>
+
+        <h4>What is Mitty?</h4>
+        <p>Mitty is a multi purpose website that consists of many applaction made by hand.
+        Mitty was made by a solo dev while in senior year of highschool.</p>
+        <br>
+
+        <h4>What can i expect from mitty in the future?</h4>
+        <p>Mitty is actively maintained as an open-source portfolio project for educational purposes.
+        Expect continuous updates, including new application rollouts, performance optimizations, and bug fixes.
+        The entire codebase is completely open-source, meaning Mitty will remain permanently free for everyone to use and explore.</p>
+        <br>
+        <p>If you have any further questions of mitty please see the help tab.</p>
+
+    </section>
+
+
+
+<!--HELP CONTENT PAGE-->
+    <section id="help-content" class="page-content is-hidden">
+        <h1>Help</h1>
+        <p>Select Games or Tools to view the available applications.</p>
+
+        <br>
+        <hr>
+
+        <h4>Having troubles? Tell us your issue.</h4>
+
+        <!-- add post and reqeust here after setting up user sign up and login with db EX: <form class="issue-form" method="post" action="/submit-issue"> -->
+        <form class="issue-form" >
+
+            <textarea
+                id="issue-request"
+                name="issue"
+                placeholder="Type your issue..."
+                rows="5"
+                required
+            ></textarea>
+
+            <button type="submit">Send</button>
+        </form>
+        <br>
+        <hr>
+        <h4>What is Mitty?</h4>
+        <p>Mitty is a multi purpose website that consists of many applaction made by hand.
+        Mitty was made by a solo dev while in senior year of highschool.</p>
+
+        <br>
+
+        <h4>How long does bug fixing take?</h4>
+        <p>Mitty is an open-source portfolio project built and maintained by a solo developer.
+        Because of this, bug fixes do not have a guaranteed timeline and are addressed on a best-effort basis.
+        If you find a bug, feel free to open an issue or submit a pull request on our repository!</p>
+
+        <br>
+
+        <h4>How do i log out?</h4>
+        <p>A user can log out of their sesion, by starting on the dashboard,
+        clicking their username/guest-id in the top right. And, clicking log out.</p>
+
+        <br>
+
+        <h4>How do i change my password?</h4>
+        <p>A user can change their password one way only.</p>
+        <br>
+
+            <ol>
+                <li>click the settings icon in the top left on the dashboard.</li>
+                <li>Navagate to account security and change your password.</li>
+            </ol>
+
+
+    </section>
+
 
     </main>
 
-
-
-
-
+    <script src="{{ url_for('interactive', filename='dashboard.js') }}"></script>
 
 </body>
 </html>

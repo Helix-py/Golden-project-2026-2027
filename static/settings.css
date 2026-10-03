@@ -38,6 +38,15 @@ body {
     padding: 20px;
 }
 
+.settings-section {
+    display: none;
+}
+
+.settings-section.active {
+    display: block;
+}
+
+
 /* ==========================================================================
    2. Layout Container
    ========================================================================== */
