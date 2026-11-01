@@ -28,7 +28,17 @@
             <button type="submit">Search</button>
         </form>
 
-        <p class="username"><a href="/">username</a></p>
+        <p class="username">
+            {% if logged_in %}
+                <span>Welcome, {{ username }}!</span>
+                <a href="{{ url_for('logout') }}">Logout</a>
+            {% else %}
+                <span>Guest Session: {{ username }}</span>
+                <a href="{{ url_for('logout') }}">Exit Guest</a>
+            {% endif %}
+        </p>
+
+
     </header>
 
 <!--NAVAGATION LINKS-->
@@ -62,9 +72,11 @@
             <img src="/static/pics/hangman.png" alt="Hangman">
         </button>
 
+
         <button class="app-button" data-category="tool">
             <img src="/static/pics/calculator.png" alt="Calculator">
         </button>
+
 
         <button class="app-button" data-category="tool">
             <img src="/static/pics/goal.png" alt="Goals">
@@ -93,7 +105,7 @@
         <br>
 
         <h4>What is Mitty?</h4>
-        <p>Mitty is a multi purpose website that consists of many applaction made by hand.
+        <p>Mitty is a multi purpose website that consists of many application made by hand.
         Mitty was made by a solo dev while in senior year of highschool.</p>
         <br>
 
@@ -119,7 +131,7 @@
         <h4>Having troubles? Tell us your issue.</h4>
 
         <!-- add post and reqeust here after setting up user sign up and login with db EX: <form class="issue-form" method="post" action="/submit-issue"> -->
-        <form class="issue-form" >
+        <form class="issue-form" method=["POST", "GET"]>
 
             <textarea
                 id="issue-request"
@@ -134,32 +146,43 @@
         <br>
         <hr>
         <h4>What is Mitty?</h4>
-        <p>Mitty is a multi purpose website that consists of many applaction made by hand.
-        Mitty was made by a solo dev while in senior year of highschool.</p>
+        <p>Mitty is a multi-purpose website featuring a variety of hand-crafted applications.
+        It was created by a solo developer during their senior year of high school.</p>
 
         <br>
 
         <h4>How long does bug fixing take?</h4>
         <p>Mitty is an open-source portfolio project built and maintained by a solo developer.
-        Because of this, bug fixes do not have a guaranteed timeline and are addressed on a best-effort basis.
-        If you find a bug, feel free to open an issue or submit a pull request on our repository!</p>
-
-        <br>
-
-        <h4>How do i log out?</h4>
-        <p>A user can log out of their sesion, by starting on the dashboard,
-        clicking their username/guest-id in the top right. And, clicking log out.</p>
+        As such, bug fixes are addressed on a best-effort basis and do not follow a guaranteed timeline.
+        If you discover a bug, you are encouraged to open an issue or submit a pull request on our repository or submit the issue form on this page above.</p>
 
         <br>
 
         <h4>How do i change my password?</h4>
-        <p>A user can change their password one way only.</p>
+        <p>To change your password:</p>
         <br>
 
             <ol>
                 <li>click the settings icon in the top left on the dashboard.</li>
-                <li>Navagate to account security and change your password.</li>
+                <li>Navagate to 'account security'</li>
+                <li>Follow the prompts to change your password.</li>
             </ol>
+
+        <br>
+
+        <h4>How to delete my acount!</h4>
+        <p>To delete your account: </p>
+
+        <br>
+
+            <ol>
+                <li>click the settings icon in the top left on the dashboard.</li>
+                <li>Navagate to 'account security'</li>
+                <li>Click 'delete acounnt'</li>
+                <li>if you are sure you want to delete your acounnt. enter your password.</li>
+                <li>click 'confirm deletion'</li>
+            </ol>
+
 
 
     </section>

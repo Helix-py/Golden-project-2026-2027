@@ -19,7 +19,7 @@ __pycache__/
 *.pfx
 credentials.json
 secrets.json
-config.local.py
+config.txt
 secrets.py
 
 # Databases and database exports
